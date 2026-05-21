@@ -93,7 +93,7 @@ def create_video(user_prompt: str):
 
     print(f"[HeyGen] Video job started: {video_id}")
 
-    for attempt in range(60):
+    for attempt in range(150):
         time.sleep(8)
         status_resp = requests.get(
             f"{HEYGEN_BASE}/v1/video_status.get?video_id={video_id}",
@@ -214,7 +214,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     status_msg = await update.message.reply_text(
-        "Generating your video... This takes 2-4 minutes, please wait."
+        "Generating your video... This can take 5-15 minutes, please wait."
     )
 
     try:
