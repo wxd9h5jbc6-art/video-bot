@@ -214,7 +214,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     status_msg = await update.message.reply_text(
-        "Generating your video... This can take 5-15 minutes, please wait."
+        "Generating your video... This can take 5-25 minutes, please wait."
     )
 
     try:
